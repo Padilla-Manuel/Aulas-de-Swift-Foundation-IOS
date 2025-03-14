@@ -1,0 +1,83 @@
+//
+//  main.swift
+//  POO-Aula3
+//
+//  Created by Aluno Mack on 14/03/25.
+//
+
+import Foundation
+
+
+//DESAFIO1
+
+//class Quadrado{
+//    var tamanho : Int
+//
+//    init(tamanho: Int){
+//        self.tamanho = tamanho
+//    }
+//
+//    func area() -> Int {
+//        return self.tamanho * self.tamanho
+//    }
+//}
+//var quad: Quadrado = Quadrado(tamanho: 5)
+//print(quad.area())
+
+
+//DESAFIO2
+
+//class Circulo{
+//    var raio : Double
+//
+//    init(raio: Double){
+//        self.raio = raio
+//    }
+//    func perimetro() -> Double {
+//        return (3.14*self.raio)*2
+//
+//    }
+//    func area() -> Double {
+//        return (self.raio * self.raio)*3.14
+//    }
+//}
+//var cir : Circulo = Circulo(raio: 4.5)
+//print(cir.area())
+//print(cir.perimetro())
+
+
+//DESAFIO3
+
+class Piramide{
+    var ladoBase : Double
+    var altura : Double
+    //construtor
+    init(ladoBase: Double, altura: Double){
+        self.ladoBase = ladoBase
+        self.altura = altura
+    }
+    //funcao para calcular o volume da piramide
+    func volume() -> Double {
+        return (self.ladoBase*self.altura)/3
+    }
+    // o privado é para que os outro n tenham acesso
+    // a funcao da areaBase é vai calcular na areaSuperficial
+    private func areaBase() -> Double{
+        return self.ladoBase * self.ladoBase
+    }
+    
+    private func calculoAlturaDosLados() -> Double {
+        return (self.altura * self.altura) + (self.ladoBase/2 * self.ladoBase/2)
+    }
+    
+    private func areaDosLados() -> Double {
+        return 4*(self.ladoBase*calculoAlturaDosLados())
+    }
+    func areaSuperficial() -> Double{
+        return areaBase() + areaDosLados()
+        
+    }
+}
+var pir : Piramide = Piramide(ladoBase: 5.5 , altura: 7.5)
+print(pir.volume())
+print(pir.areaSuperficial())
