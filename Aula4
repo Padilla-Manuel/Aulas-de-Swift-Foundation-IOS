@@ -1,0 +1,155 @@
+//
+//  ContentView.swift
+//  Aula04
+//
+//  Created by Aluno Mack on 17/03/25.
+//
+
+import SwiftUI
+
+//EXERCICIO1
+
+
+struct ContentView: View {
+    var body: some View {
+        ZStack {//um atras do outro
+        RoundedRectangle(cornerRadius:25)
+                .fill(.red)
+                .frame(width:190, height: 220)
+            HStack(spacing: 20/*espaco de forma horizontal*/){ //horizontal
+                VStack (spacing: 20){ //vertical
+                    Rectangle()
+                        .fill(.yellow)
+                        .frame(width:60, height: 60)
+                    Circle()
+                        .fill(.blue)
+                        .frame(width:70)
+                }
+                RoundedRectangle(cornerRadius:25)
+                    .fill(.green)
+                    .frame(width:55, height: 180)
+            }
+        }
+        .padding()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+
+
+//EXERCICIO2
+
+
+//EXERCICIO3
+
+//struct ContentView: View {
+//
+//    @State var click = 0
+//    var body: some View {
+//        VStack{
+//            Text("\(click)")
+//            Button(action: {
+//                print("Clicked")
+//                click += 1
+//                print(click)
+//            }){
+//                HStack{
+//                    Text("Click Aqui")
+//                        .fontWeight(.semibold)
+//                        .font(.title)
+//                }
+//                .padding()
+//                .foregroundColor(.white)
+//                .background(Color.pink)
+//                .cornerRadius(10)
+//            }
+//        }
+//        .padding()
+//    }
+//}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
+
+//
+//  Desafio3.swift
+//  Aula04
+//
+//  Created by Aluno Mack on 17/03/25.
+//
+
+import SwiftUI
+
+struct Desafio3View: View {
+    var body: some View {
+        VStack(spacing: 40){
+            Image("sonic")
+                .resizable()// deixa alterado a imagem
+                .frame(width: 120, height: 140)
+                .imageScale(.small)
+                .cornerRadius(360)
+
+            Text("SONIC")
+                .fontWeight(.semibold)
+            Text("Sonic é um ouriço antropomórfico de pele azul cobalto e espinhos extremamente grossos e afiados que fazem parecer ser um cabelo. Ele possui uma cabeça ligeiramente grande e desproporcional em relação ao seu corpo, além de pernas e braços bem compridos. Seus olhos são juntos sempre numa expressão de raiva com a íris preta (verde nos jogos atuais) além de ter orelhas pontiagudas similares as de um gato. Os seus braços, boca e barriga são cor de pele separados do resto corpo. ")
+        }
+        .padding()
+    }
+}
+
+struct Desafio3View_Previews: PreviewProvider {
+    static var previews: some View {
+       Desafio3View()
+    }
+}
+
+
+//
+//  Desafio2.swift
+//  Aula04
+//
+//  Created by Aluno Mack on 17/03/25.
+//
+
+import SwiftUI
+
+struct Desafio2View: View {
+    
+    @State var click = 0 //O state serve para dizer que minha variavel vai trocar
+    var body: some View {
+        VStack{
+            Text("\(click)")
+            Button(action: {
+                print("Clicked")
+                click += 1
+                print(click)
+            }){
+                HStack{
+                    Text("Click Aqui")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.pink)
+                .cornerRadius(10)
+            }
+        }
+        .padding()
+    }
+}
+
+struct Desafio2View_Previews: PreviewProvider {
+    static var previews: some View {
+        Desafio2View()
+    }
+}
+
